@@ -14,6 +14,7 @@ export class AppComponent {
   useSymbols: boolean = false;
   length: number = 0;
 
+
   onChangeLetters() {
     this.useLetters = !this.useLetters;
   }
