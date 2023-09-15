@@ -35,6 +35,28 @@ export class AppComponent {
   }
 
   onButtonClick() {
-    this.password = 'My Password';
+    const numbers = "1234567890";
+    const letters = "abcdefghijklmnopqrstuvwxyz";
+    const symbols = "!@#$%^&*()_+";
+
+    let validChars = '';
+
+    if(this.useLetters){
+      validChars += letters;
+    } 
+    if(this.useNumbers){ 
+      validChars += numbers;
+    } 
+    if(this.useSymbols){ 
+      validChars += symbols;
+    } 
+
+    let generatedPassword = '';
+    for(let i = 0; i < this.length; i++){
+      const index = Math.floor(Math.random() * validChars.length);
+      generatedPassword += validChars[index];
+    }
+
+    this.password = generatedPassword;
   }
 }
